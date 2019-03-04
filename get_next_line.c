@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 23:05:09 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/01 14:30:49 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/03 21:00:31 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,59 +19,44 @@
 int	get_next_line(const int fd, char **line)
 {
 	int			ret;
-	int			len;
-	static int	count;
-	char		*ptr;
-	int			i;
-	int			x;
-	int			y;
+	static char *tab[4096];
+	char		*new_line;
+	int			start;
+	int			end;
+	int	i;
+	static int	word_count;
+	int			flag;
 
+	start = 0;
+	end = 0;
 	ret = 0;
+	flag = 1;
+	i = 0;
 	if (!fd)
 		return (0);
 	if (*line)
 	{
-		if (count)
-			ptr = *line + (BUF_SIZE * count);
-		else
-			ptr = *line;
-		y = BUF_SIZE * (count + 1);
-		if (count > 0)
+		tab[fd] = ft_strnew(BUFF_SIZE + 1);
+		if ((ret = read(fd, tab[fd], BUFF_SIZE)) > 0)
 		{
-			len = read(fd, ptr, y + 1);
-		}
-		else
-			len = read(fd, ptr, BUF_SIZE);
-		i = len;
-		x = BUF_SIZE * (count + 1);
-		if (len > 0)
-		{
-			if (count > 0)
+			while (i < (BUFF_SIZE * (word_count + 1)))
 			{
-				while (x < 0)
+				if (tab[fd][i] == '\n')
 				{
-					if (ptr[x] == '\n')
-						y++;
-					if (y == count)
-						break ;
-					x--;
-				}
-			}
-			while (len >= 0)
-			{
-				if (ptr[x - len] == 10)
-				{
-					count++;
+					end = i;
+					word_count++;
+					tab[fd][i] = '\0';
+					ft_memcpy(*line, tab[fd], (end));
 					break ;
 				}
-				//ft_putchar(ptr[x - len]);
-				len--;
+			//	printf("tab[%d][%d] = %c\n", fd, i, tab[fd][i]);
+				i++;
+			}	
+			if (ret == BUFF_SIZE || tab[fd][end] == '\n')
+			{
+				return (1);
 			}
-			if (len == 0 && ft_isprint(ptr[x - 1]))
-				return (0);
-			if (count > 0)
-				ft_realloc(ptr, (BUF_SIZE * count));
-			return (1);
+			return (0);
 		}
 	}
 	return (0);
