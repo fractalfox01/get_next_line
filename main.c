@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/03 12:52:29 by tvandivi          #+#    #+#             */
+/*   Updated: 2019/03/24 14:35:35 by tvandivi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -7,46 +19,61 @@
 int	main(int ac, char **av)
 {
 	int			fd;
-	static char	buf[32];
-//	const char	*adr;
-	char		**addr;
-	int			i;
+	int			fd1;
+	char		*buf;
+	char		*buf1;
 	char		a;
+	int			i;
 
-	a = 'a';
+//	a = 1;
 	i = 0;
 	if (ac == 1)
 	{
+		char *line = "a simple test string\nb simple test string\nc simple test string\nd simple test string\n";
 		printf("Enter a file name.\n");
+		if (get_next_line(-99, &line) == -1)
+			printf("minus 1\n");
+		else
+			printf("returned: %d\n", get_next_line(-99, &line));
 	}
 	else if (ac == 2)
 	{
-//		buf = (char *)ft_memalloc(BUF_SIZE);
-//		adr = av[1];
-		ft_memset(buf, 'a', BUF_SIZE - 1);
 		fd = open(av[1], O_RDONLY);
-//		printf("fd: %d\n", fd);
-//		printf("Addr: %s\n", &*buf);
-		addr = (char **)malloc(BUF_SIZE);
-		*addr = buf;
-//		printf("%zu\n", sizeof(*addr));
-//		printf("%zu\n", sizeof(&*buf));
-//		printf("%zu\n", sizeof(buf));
-		ft_memset(*addr, '\0', BUF_SIZE);
-//		while (i < (BUF_SIZE - 1))
-//		{
-//			ft_memset(*addr + i++, a++, 1);
-//			if (a == ('z' + 1))
-//				a = 'a';
-//		}
-//		if (*addr)
-//		{
-			while (get_next_line(fd, addr))
+		while ((a = get_next_line(fd, &buf)) > 0)
+		{
+			i++;
+			printf("\033[0;35m%s\n", buf);
+		}
+		close(fd);
+	}
+	else if (ac == 3)
+	{
+		if (ft_strcmp(av[1], "debug") == 0)
+		{
+			fd = open(av[2], O_RDONLY);
+			while ((a = get_next_line(fd, &buf)) > 0)
 			{
-				printf("%s\n", buf);
+				i++;
+				printf("\033[0;35m%s\n", buf);
 			}
-				close(fd);
-//		}
+			printf("\n\033[0;32m\u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0503e\u0499\u0299\u0216\u050d\u050d\u0671\u05deg  \u0305 \u0305 \u0305 \u0305 \u0305 \u0305\n\n");
+			printf("Buffer Length:\t%d\n", BUFF_SIZE);
+			printf("buf Length:\t%zu\n", ft_strlen(buf));
+			close(fd);
+		}
+		else
+		{
+			fd = open(av[1], O_RDONLY);
+			fd1 = open(av[2], O_RDONLY);
+			while ((a = get_next_line(fd, &buf)) > 0)
+			{
+				printf("\033[0;34m%s\n", buf);
+				if ((a = get_next_line(fd1, &buf1)) > 0)
+					printf("\033[0;32m%s\n", buf1);
+			}
+			close(fd);
+			close(fd1);
+		}
 	}
 	return (0);
 }
