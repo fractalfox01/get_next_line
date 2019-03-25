@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 15:00:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/17 15:58:58 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/03 13:58:54 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strnlen(const char *str, size_t n)
 	int	len;
 
 	len = 0;
-	while (str[len] != '\0' && len < (int)n)
+	while (len < (int)n && str[len] != '\0')
 	{
 		len++;
 	}

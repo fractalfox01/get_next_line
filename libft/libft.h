@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 20:09:59 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/28 13:56:38 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/01 12:50:42 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_iscntrl(int c);
+int					ft_isgraph(int c);
 void				*ft_realloc(void *tab, size_t size);
 int					*sort_selection(int *arr, size_t n);
 int					*sort_bubble(int *arr, size_t len);

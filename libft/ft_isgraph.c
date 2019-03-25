@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 13:49:13 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/01 18:32:14 by tvandivi         ###   ########.fr       */
+/*   Created: 2019/03/01 11:51:52 by tvandivi          #+#    #+#             */
+/*   Updated: 2019/03/01 11:55:20 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-void	*ft_realloc(void *tab, size_t size)
+int	ft_isgraph(int c)
 {
-	size_t	i;
-	void	*ptr;
-
-	i = 0;
-	ptr = ft_memalloc(size);
-	if (!tab || ptr)
-		return (NULL);
-	ptr = ft_memcpy(ptr, tab, sizeof(tab));
-	free(tab);
-	return (ptr);
+	if (c >= 33 && c <= 127)
+		return (1);
+	return (0);
 }

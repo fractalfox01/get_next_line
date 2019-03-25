@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:13:31 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/24 17:57:16 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/03 14:17:08 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ size_t	ft_strlen(const char *str)
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
+	if (str)
 	{
-		len++;
+		while (str[len] != '\0')
+		{
+			len++;
+		}
 	}
 	return (len);
 }

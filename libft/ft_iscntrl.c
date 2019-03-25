@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 13:49:13 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/01 18:32:14 by tvandivi         ###   ########.fr       */
+/*   Created: 2019/03/01 12:44:11 by tvandivi          #+#    #+#             */
+/*   Updated: 2019/03/01 12:58:57 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-void	*ft_realloc(void *tab, size_t size)
+int	ft_iscntrl(int c)
 {
-	size_t	i;
-	void	*ptr;
-
-	i = 0;
-	ptr = ft_memalloc(size);
-	if (!tab || ptr)
-		return (NULL);
-	ptr = ft_memcpy(ptr, tab, sizeof(tab));
-	free(tab);
-	return (ptr);
+	if (c >= 0 && c <= 31)
+		return (1);
+	return (0);
 }
