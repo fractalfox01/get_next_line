@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 13:21:39 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/24 12:57:30 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/24 22:16:40 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,9 @@ int	get_next_line(int fd, char **line)
 	static char	*tab[FD_LIMIT];
 	char		*buf;
 	int			a;
-	int			j;
 
-	a = 0;
-	j = 0;
+	if (fd < 0 || !(line))
+		return (-1);
 	if (!(tab[fd]))
 		tab[fd] = ft_strdup("");
 	buf = ft_strnew(BUFF_SIZE + 1);
@@ -95,5 +94,5 @@ int	get_next_line(int fd, char **line)
 		free(buf);
 		buf = ft_strnew(BUFF_SIZE + 1);
 	}
-	return (0);
+	return (-1);
 }
