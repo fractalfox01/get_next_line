@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 12:52:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/25 17:31:18 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/26 12:39:49 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ int	main(int ac, char **av)
 {
 	int			fd;
 	int			fd1;
+	int			fd2;
+	int			fd3;
+	int			fd4;
 	char		*buf;
 	char		*buf1;
+	char		*buf2;
+	char		*buf3;
+	char		*buf4;
 	char		a;
 	int			i;
 
@@ -75,6 +81,69 @@ int	main(int ac, char **av)
 			close(fd);
 			close(fd1);
 		}
+	}
+	else if (ac == 4)
+	{
+		fd = open(av[1], O_RDONLY);
+		fd1 = open(av[2], O_RDONLY);
+		fd2 = open(av[3], O_RDONLY);
+		while ((a = get_next_line(fd, &buf)) > 0)
+		{
+			printf("\033[0;34m%s\n", buf);
+			if ((a = get_next_line(fd1, &buf1)) > 0)
+				printf("\033[0;32m%s\n", buf1);
+			if ((a = get_next_line(fd2, &buf2)) > 0)
+				printf("\033[0;36m%s\n", buf1);
+		}
+		close(fd);
+		close(fd1);
+		close(fd2);
+	}
+	else if (ac == 5)
+	{
+		fd = open(av[1], O_RDONLY);
+		fd1 = open(av[2], O_RDONLY);
+		fd2 = open(av[3], O_RDONLY);
+		fd3 = open(av[4], O_RDONLY);
+		while ((a = get_next_line(fd, &buf)) > 0)
+		{
+			printf("\033[0;34m%s\n", buf);
+			if ((a = get_next_line(fd1, &buf1)) > 0)
+				printf("\033[0;32m%s\n", buf1);
+			if ((a = get_next_line(fd2, &buf2)) > 0)
+				printf("\033[0;36m%s\n", buf2);
+			if ((a = get_next_line(fd3, &buf3)) > 0)
+				printf("\033[0;33m%s\n", buf3);
+		}
+		close(fd);
+		close(fd1);
+		close(fd2);
+		close(fd3);
+	}
+	else if (ac == 6)
+	{
+		fd = open(av[1], O_RDONLY);
+		fd1 = open(av[2], O_RDONLY);
+		fd2 = open(av[3], O_RDONLY);
+		fd3 = open(av[4], O_RDONLY);
+		fd4 = open(av[5], O_RDONLY);
+		while ((a = get_next_line(fd, &buf)) > 0)
+		{
+			printf("\033[0;34m%s\n", buf);
+			if ((a = get_next_line(fd1, &buf1)) > 0)
+				printf("\033[0;32m%s\n", buf1);
+			if ((a = get_next_line(fd2, &buf2)) > 0)
+				printf("\033[0;36m%s\n", buf2);
+			if ((a = get_next_line(fd3, &buf3)) > 0)
+				printf("\033[0;33m%s\n", buf3);
+			if ((a = get_next_line(fd4, &buf4)) > 0)
+				printf("\033[0;31m%s\n", buf4);
+		}
+		close(fd);
+		close(fd1);
+		close(fd2);
+		close(fd3);
+		close(fd4);
 	}
 	return (0);
 }
