@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 12:52:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/24 14:35:35 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/25 17:31:18 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	main(int ac, char **av)
 			printf("\n\033[0;32m\u0305 \u0305 \u0305 \u0305 \u0305 \u0305 \u0503e\u0499\u0299\u0216\u050d\u050d\u0671\u05deg  \u0305 \u0305 \u0305 \u0305 \u0305 \u0305\n\n");
 			printf("Buffer Length:\t%d\n", BUFF_SIZE);
 			printf("buf Length:\t%zu\n", ft_strlen(buf));
+			printf("Line Count:\t%d\n", i);
 			close(fd);
 		}
 		else
