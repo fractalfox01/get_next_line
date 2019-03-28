@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 12:13:06 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/28 11:29:28 by tvandivi         ###   ########.fr       */
+/*   Created: 2019/03/10 19:08:00 by tvandivi          #+#    #+#             */
+/*   Updated: 2019/03/10 19:09:45 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-
-char	*ft_strdup(const char *s)
+int	ft_abs(int x)
 {
-	char	*nstr;
-	int		len;
-	int		i;
-
-	len = ft_strlen((char *)s);
-	nstr = (char *)malloc(sizeof(char) * (len + 1));
-	if (nstr == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		nstr[i] = s[i];
-		i++;
-	}
-	nstr[i] = '\0';
-	return (nstr);
+	if (x < 0)
+		x *= -1;
+	return (x);
 }

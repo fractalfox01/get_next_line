@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_worditoa.c                                      :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 23:39:48 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:49:04 by tvandivi         ###   ########.fr       */
+/*   Created: 2019/03/10 18:08:05 by tvandivi          #+#    #+#             */
+/*   Updated: 2019/03/25 13:59:18 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-char	*ft_worditoa(char *ptr, long nbr, long len, long b)
+char	*ft_strpbrk(const char *str1, const char *str2)
 {
-	char	*cat;
-	long	rem;
+	int		i;
+	int		j;
+	int		len;
+	char	*ret;
 
-	rem = 1;
-	cat = "-2147483648";
-	if (nbr == -2147483648)
+	i = 0;
+	j = 0;
+	len = ft_strlen((char *)str1);
+	while (i < len)
 	{
-		b = -1;
-		ptr = ft_strnew(12);
-		while (++b < 11)
-			ptr[b] = cat[b];
-		return (ptr);
+		ret = (char *)str1;
+		while (str2[j] != '\0')
+		{
+			if (*ret == str2[j])
+				return (ret);
+			j++;
+		}
+		j = 0;
+		str1++;
+		i++;
 	}
-	while (len > 0)
-	{
-		ptr[b++] = (nbr / ft_power(len)) + 48;
-		rem = (nbr % ft_power(len));
-		nbr -= ft_power(len) * (nbr / ft_power(len));
-		len--;
-	}
-	return (ptr);
+	return (NULL);
 }

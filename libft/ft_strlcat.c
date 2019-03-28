@@ -6,12 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 21:55:44 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/25 19:31:07 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:30:15 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

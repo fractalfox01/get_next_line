@@ -6,12 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 23:06:06 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:45:43 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:30:40 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {

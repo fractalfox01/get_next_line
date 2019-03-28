@@ -6,24 +6,16 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:12:08 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:41:48 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:42:01 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	len;
 
-	i = 0;
-	if (str)
-	{
-		while (*str != '\0')
-		{
-			ft_putchar(*str);
-			str++;
-			i++;
-		}
-	}
+	len = ft_strlen(str);
+	write(1, &*str, len);
 }

@@ -6,12 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 12:09:36 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/28 11:13:14 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:23:20 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 int	ft_atoi(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 11:22:52 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/13 09:15:42 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:44:23 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "includes/libft.h"
 
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {

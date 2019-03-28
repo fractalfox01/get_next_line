@@ -6,14 +6,14 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 13:21:39 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/25 20:13:01 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 12:56:42 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "libft/libft.h"
 #include "get_next_line.h"
+#include "libft/includes/libft.h"
 
 int		null_check(char **line, char **tab)
 {
@@ -94,7 +94,7 @@ int		get_next_line(int fd, char **line)
 	char		*buf;
 	int			a;
 
-	if (fd < 0 || !(line))
+	if (fd < 0 || !(line) || BUFF_SIZE <= 0)
 		return (-1);
 	if (!(tab[fd]))
 		tab[fd] = ft_strdup("");

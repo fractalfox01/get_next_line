@@ -6,13 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 13:25:45 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/25 16:27:28 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:32:24 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	**ft_strsplit(char const *s, char c)
 {

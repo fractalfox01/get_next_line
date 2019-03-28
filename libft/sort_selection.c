@@ -6,11 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 23:09:10 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/27 13:32:09 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:49:54 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "includes/libft.h"
 
 int	*sort_selection(int *arr, size_t n)
 {

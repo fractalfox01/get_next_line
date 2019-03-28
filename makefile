@@ -1,4 +1,4 @@
-FLAGS= -g -fsanitize=address -Wall -Wextra -Werror
+FLAGS= -g -Wall -Wextra -Werror
 
 SRC := $(addsuffix .c, get_next_line libft/ft_memmove libft/ft_strnew libft/ft_memalloc libft/ft_memcpy libft/ft_bzero libft/ft_memset libft/ft_putchar libft/ft_realloc)
 
@@ -10,15 +10,20 @@ NAME= get_next_line
 
 $(NAME):
 	@echo "\033[1;32mCompiling Get_Nexl_line..."
-	@gcc $(FLAGS) main.c get_next_line.c libft/ft_strcmp.c libft/ft_strdel.c libft/ft_memdel.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_strjoin.c libft/ft_strncpy.c libft/ft_strbuild.c libft/ft_strsplit.c libft/ft_strclr.c libft/ft_strsub.c libft/ft_strxlen.c libft/ft_strcpy.c libft/ft_strcat.c libft/ft_wordcount.c libft/ft_strlen.c libft/ft_memchr.c libft/ft_memccpy.c libft/ft_memmove.c libft/ft_strnew.c libft/ft_memalloc.c libft/ft_memcpy.c libft/ft_bzero.c libft/ft_memset.c libft/ft_strnlen.c libft/ft_putchar.c libft/ft_realloc.c -o get_next_line
+	@make -C libft/ fclean && make -C libft/
+	@clang -Wall -Wextra -Werror -I libft/includes -o get_next_line.o -c get_next_line.c
+	@clang -Wall -Wextra -Werror -I libft/includes -o main.o -c main.c
+	@clang -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
 
 all: $(NAME)
 
 clean:
-	@rm -r get_next_line.dSYM && echo "\033[0;32mSussessfully removed get_next_line.dSYM" || echo "\033[0;32mAlready Removed get_next_line.dSYM"
+	@rm get_next_line.o;rm main.o
+	@rm -r get_next_line.o && rm main.o && echo "\033[0;32mSussessfully removed get_next_line.o and main.o" || echo "\033[0;32mAlready Removed get_next_line.o and main.o"
 
 fclean: clean
-	@rm get_next_line && echo "\033[0;32mSussessfully removed get_next_line" || echo "\033[0;32mAlready Removed get_next_line"
+	@rm test_gnl && echo "\033[0;32mSussessfully removed test_gnl" || echo "\033[0;32mAlready Removed test_gnl"
+	@make -C libft/ fclean
 
 fc: fclean
 

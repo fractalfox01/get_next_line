@@ -6,18 +6,18 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 15:00:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/03 13:58:54 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:47:45 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "includes/libft.h"
 
-int	ft_strnlen(const char *str, size_t n)
+int	ft_strnlen(char *str, size_t n)
 {
 	int	len;
 
 	len = 0;
-	while (len < (int)n && str[len] != '\0')
+	while (str[len] != '\0' && len < (int)n)
 	{
 		len++;
 	}

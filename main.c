@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 12:52:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/26 12:39:49 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:52:39 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "get_next_line.h"
-#include "libft/libft.h"
+#include "libft/includes/libft.h"
 
 int	main(int ac, char **av)
 {

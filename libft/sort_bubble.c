@@ -6,11 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 23:17:06 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/24 22:06:39 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:49:37 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "includes/libft.h"
 
 int	*sort_bubble(int *arr, size_t len)
 {

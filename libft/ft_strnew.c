@@ -6,13 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/17 18:57:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:46:14 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:31:23 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strnew(size_t size)
 {

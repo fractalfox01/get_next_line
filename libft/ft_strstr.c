@@ -6,13 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 16:26:26 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:47:23 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:32:58 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 static char	*help(char *n, char *h, char *ptr, char *needle)
 {

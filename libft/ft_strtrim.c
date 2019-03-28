@@ -6,12 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 11:22:49 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/02/22 15:47:46 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:33:10 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strtrim(char const *s)
 {

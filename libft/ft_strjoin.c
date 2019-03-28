@@ -6,12 +6,11 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 01:24:21 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/20 18:17:59 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:29:57 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
