@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 12:52:29 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/28 11:52:39 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/30 12:22:18 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,25 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 #include "libft/includes/libft.h"
+
+void	prompt(int a, char *line)
+{
+		ft_putstr(FT_WHITE);
+		ft_putstr("\nget_next_line(0, &line) returned: ");
+		ft_putstr(FT_GREEN);
+	   	ft_putnbr(a);
+		ft_putstr("\tstr: ");
+		ft_putstr(line);
+		ft_putstr(FT_WHITE);
+		ft_putstr("\nget_next_line(42, &line) returned: ");
+		ft_putstr(FT_GREEN);
+		ft_putnbr(get_next_line(42, &line));
+		ft_putstr(FT_WHITE);
+		ft_putstr("\nget_next_line(-99, &line) returned: ");
+		ft_putstr(FT_GREEN);
+		ft_putnbr(get_next_line(-99, &line));
+		ft_putstr(FT_LIGHTGRAY);
+}
 
 int	main(int ac, char **av)
 {
@@ -36,11 +55,9 @@ int	main(int ac, char **av)
 	if (ac == 1)
 	{
 		char *line = "a simple test string\nb simple test string\nc simple test string\nd simple test string\n";
-		printf("Enter a file name.\n");
-		if (get_next_line(-99, &line) == -1)
-			printf("minus 1\n");
-		else
-			printf("returned: %d\n", get_next_line(-99, &line));
+		ft_putstr("Enter a few words: ");
+		a = get_next_line(0, &line);
+		prompt(a, line);
 	}
 	else if (ac == 2)
 	{
