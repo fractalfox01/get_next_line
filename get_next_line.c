@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 13:21:39 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/03/30 12:34:49 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/03/30 12:48:51 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 #include "libft/includes/libft.h"
+
+/*
+**  If nothing gets read (read == 0) but there's still lines in tab,
+**	then set it and zero out tab.
+*/
 
 int		null_check(char **line, char **tab)
 {
@@ -74,6 +79,13 @@ int		chomp_line(char **tab, char **line)
 	}
 	return (0);
 }
+
+/*
+**  if BUFF_SIZE happens to be the same length of the last read,
+**  then there's problems.
+**  this fixes those problems by setting the last line and freeing everything
+**  ,since there will not be any more memory allocation.
+*/
 
 void	set_and_free(char **tab, char **buf)
 {
