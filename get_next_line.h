@@ -13,9 +13,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE	9
-# define FD_LIMIT	4891
+# define BUFF_SIZE	42
 
 int	get_next_line(const int fd, char **line);
-int	gtfoline(char **holder, char **line);
 #endif
