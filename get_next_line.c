@@ -12,6 +12,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "get_next_line.h"
 #include "libft/includes/libft.h"
 
@@ -102,11 +103,11 @@ void	set_and_free(char **tab, char **buf)
 
 int		get_next_line(int fd, char **line)
 {
-	static char	*tab[FD_LIMIT];
+	static char	*tab[OPEN_MAX];
 	char		*buf;
 	int			a;
 
-	if (fd < 0 || !(line) || BUFF_SIZE <= 0)
+	if (fd < 0 || !(line) || fd > OPEN_MAX || read(fd, &buf, 0) == -1)
 		return (-1);
 	if (!(tab[fd]))
 		tab[fd] = ft_strdup("");
