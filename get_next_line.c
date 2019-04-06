@@ -6,7 +6,7 @@
 /*   By: tvandivi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/22 13:21:39 by tvandivi          #+#    #+#             */
-/*   Updated: 2019/04/04 21:24:58 by tvandivi         ###   ########.fr       */
+/*   Updated: 2019/04/05 17:33:20 by tvandivi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int		get_next_line(int fd, char **line)
 	char		*buf;
 	int			a;
 
-	if (fd < 0 || !(line) || BUFF_SIZE > 99999 || fd > OPEN_MAX || read(fd, &buf, 0) == -1)
+	if (fd < 0 || !(line) || fd > OPEN_MAX || read(fd, &buf, 0) == -1)
 		return (-1);
 	if (!(tab[fd]))
 		tab[fd] = ft_strdup("");
