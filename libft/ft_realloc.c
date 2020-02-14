@@ -14,10 +14,8 @@
 
 void	*ft_realloc(void *tab, size_t size)
 {
-	size_t	i;
 	void	*ptr;
 
-	i = 0;
 	ptr = ft_memalloc(size);
 	if (!tab || ptr)
 		return (NULL);
