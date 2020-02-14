@@ -15,9 +15,7 @@
 static char	*find_value(char *ptr, long nbr, long len, long b)
 {
 	char	*cat;
-	long	rem;
 
-	rem = 1;
 	cat = "-2147483648";
 	if (nbr == -2147483648)
 	{
