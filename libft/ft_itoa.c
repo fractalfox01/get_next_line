@@ -28,7 +28,6 @@ static char	*find_value(char *ptr, long nbr, long len, long b)
 	while (len > 0)
 	{
 		ptr[b++] = (nbr / ft_power(len, 10)) + 48;
-		rem = (nbr % ft_power(len, 10));
 		len--;
 	}
 	return (ptr);
