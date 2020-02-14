@@ -15,14 +15,12 @@
 char	*ft_strcat(char *dest, char *src)
 {
 	char	*ptr;
-	int		i;
-	int		f;
-	int		dlen;
-	int		s;
+	int	i;
+	int	f;
+	int	dlen;
 
 	i = (int)sizeof(dest);
 	dlen = ft_strlen(dest);
-	s = (int)sizeof(src);
 	f = 0;
 	ptr = dest;
 	if (!(*src))
@@ -30,9 +28,7 @@ char	*ft_strcat(char *dest, char *src)
 	while (*dest != '\0')
 		dest++;
 	while (*src != '\0')
-	{
 		*dest++ = *src++;
-	}
 	*dest = '\0';
 	return (ptr);
 }
