@@ -45,12 +45,10 @@ char		*ft_strstr(const char *haystack, const char *needle)
 {
 	char	*h;
 	char	*n;
-	size_t	nlen;
 	char	*ptr;
 
 	h = (char *)haystack;
 	n = (char *)needle;
-	nlen = ft_strlen(n);
 	ptr = h;
 	if (!(*n))
 		return (h);
