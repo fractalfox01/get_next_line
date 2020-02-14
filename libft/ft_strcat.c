@@ -12,16 +12,19 @@
 
 #include "includes/libft.h"
 
+/*
+** ft_strcat copies all the characters from src to the end of dest.
+**
+** NOTE:
+**  The 'dest' character array must be large enough to hold the resulting
+**  combination of both strings.
+**  "buffer overruns are a favorite avenue for attacking secure programs." - Linux man pages
+*/
+
 char	*ft_strcat(char *dest, char *src)
 {
 	char	*ptr;
-	int	i;
-	int	f;
-	int	dlen;
 
-	i = (int)sizeof(dest);
-	dlen = ft_strlen(dest);
-	f = 0;
 	ptr = dest;
 	if (!(*src))
 		return (ptr);
